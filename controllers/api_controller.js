@@ -42,6 +42,8 @@ const bucket = getStorage(app).bucket();
 
 TextRouter.post('/', upload.single('file'), async (req, res) => {
 
+    console.log('reqreq', req)
+
     if (!req.file) {
         res.status(400).send('No file uploaded.');
         return;
