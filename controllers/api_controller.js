@@ -42,14 +42,14 @@ const bucket = getStorage(app).bucket();
 
 TextRouter.post('/', upload.single('file'), async (req, res) => {
 
-    console.log('reqreq', req)
+    console.log('reqreq', req.body)
 
     if (!req.file) {
         res.status(400).send('No file uploaded.');
         return;
     }
 
-    let file_name = `images/${req.file.originalname},${new Date()}`
+    let file_name = `images/${req.file.originalname}`
 
     const bufferStream = new stream.PassThrough();
 
