@@ -1,5 +1,5 @@
 
-const TextRouter = require('express').Router();
+const ImageRouter = require('express').Router();
 
 require('dotenv').config();
 
@@ -40,7 +40,7 @@ const app = admin.initializeApp({
 
 const bucket = getStorage(app).bucket();
 
-TextRouter.post('/', upload.single('file'), async (req, res) => {
+ImageRouter.post('/', upload.single('file'), async (req, res) => {
 
     console.log('reqreq', req.body)
 
@@ -80,4 +80,4 @@ TextRouter.post('/', upload.single('file'), async (req, res) => {
 
 });
 
-module.exports = TextRouter;
+module.exports = ImageRouter;
